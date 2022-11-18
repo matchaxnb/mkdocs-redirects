@@ -5,6 +5,7 @@ All rights reserved.
 import logging
 import os
 import posixpath
+import json
 
 from mkdocs import utils
 from mkdocs.config import config_options
@@ -50,6 +51,9 @@ def write_html(site_dir, old_path, new_path):
     with open(old_path_abs, 'w', encoding='utf-8') as f:
         f.write(content)
 
+def write_redirect_metadata(site_dir, metadata):
+    with open(f'{site_dir}/redirects.json', 'w', encoding='utf-u') as fh:
+        json.dump(fh, metadata)
 
 def get_relative_html_path(old_page, new_page, use_directory_urls):
     """Return the relative path from the old html path to the new html path"""
@@ -120,7 +124,7 @@ class RedirectPlugin(BasePlugin):
                 get_html_path(page_old, use_directory_urls),
                 dest_path,
             )
-
+        write_redirect_metadata(config['site_dir'], self.redirects)
 
 def _split_hash_fragment(path):
     """
