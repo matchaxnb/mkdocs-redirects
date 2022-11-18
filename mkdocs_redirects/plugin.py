@@ -63,7 +63,7 @@ def write_html(site_dir, old_path, new_path):
 
 def write_redirect_metadata(site_dir, metadata):
     with open(f'{site_dir}/redirects.json', 'w', encoding='utf-8') as fh:
-        json.dump(fh, metadata)
+        json.dump(metadata, fh)
 
 def get_relative_html_path(old_page, new_page, use_directory_urls):
     """Return the relative path from the old html path to the new html path"""
