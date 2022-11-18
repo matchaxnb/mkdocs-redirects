@@ -27,7 +27,7 @@
       "@semantic-release/exec",
       {
 	"prepareCmd": "sed -i 's/007007007/${nextRelease.version}/' setup.py",
-	"publishCmd": "python setup.py sdist bdist_wheel && twine upload dist/*"
+	"publishCmd": "python3 setup.py sdist bdist_wheel && twine upload dist/*"
       }
     ]
   ]
