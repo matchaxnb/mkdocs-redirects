@@ -1,3 +1,13 @@
+## [1.0.4](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/compare/1.0.3...1.0.4) (2022-11-18)
+
+
+### Bug Fixes
+
+* build system (add aliases) ([ce1c3db](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/commit/ce1c3db6b0a0a46d625afeb2129a406ba82d9091))
+* build system (more fixes to the twine command) ([0fd3b43](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/commit/0fd3b438baf3c33738cee9297de5c5f552f8f587))
+* build system (more fixes) ([b76a362](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/commit/b76a3626121624d4bb741195070952e5f34cc823))
+* **ci:** set correct order of CI steps ffs ([e37a3e5](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/commit/e37a3e523d9da98c29ed254e7fb516f9a69ed06e))
+
 ## [1.0.3](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/compare/1.0.2...1.0.3) (2022-11-18)
 
 
