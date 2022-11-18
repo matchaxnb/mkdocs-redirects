@@ -60,7 +60,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'mkdocs.plugins': [
-            'redirects = mkdocs_redirects.plugin:RedirectPlugin',
+            'redirects = techdocs_redirects.plugin:RedirectPlugin',
         ]
     },
 )
