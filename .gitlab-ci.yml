@@ -1,8 +1,15 @@
 include:
   - project: sennder/engineering-effectiveness/platform/sennder-gitlab-templates
     file: python-publish-registry.yml
+  - project: sennder/engineering-effectiveness/platform/platform-libs/container-images/semantic-release
+    file:
+      - /gitlab-ci-templates/self-service-prepare.yaml
+      - /gitlab-ci-templates/self-service-publish.yaml
 
-stages: [build]
+stages:
+  - semantic-release-prepare
+  - build
+  - semantic-release
 
 prepare_pip:
   extends: .prepare_pip

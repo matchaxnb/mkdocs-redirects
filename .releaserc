@@ -1,0 +1,33 @@
+{
+  "branches": [
+    "main"
+  ],
+  "tagFormat": "${version}",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    "@semantic-release/changelog",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/gitlab",
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "gitlab-ci-templates/library.yaml"
+        ],
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "generateNotesCmd": "scripts/update-gitlab-template-from-release.sh ${nextRelease.version} [skip ci]"
+      }
+    ]
+  ]
+}

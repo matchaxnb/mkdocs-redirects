@@ -32,6 +32,16 @@ Redirecting...
 </html>
 """
 
+def create_or_update_techdocs_metadata(site_dir, extra_data):
+    metadata = None
+    try:
+        with open(f'{site_dir}/techdocs_metadata.json', 'r', encoding='utf-8') as fh:
+            metadata = json.load(fh)
+    except FileNotFoundError:
+        metadata = {}
+    metadata.update(extra_data)
+    with open(f'{site_dir}/techdocs_metadata.json', 'w', encoding='utf-8') as fh:
+        json.dump(metadata, fh)
 
 def write_html(site_dir, old_path, new_path):
     """Write an HTML file in the site_dir with a meta redirect to the new page"""
@@ -125,6 +135,7 @@ class RedirectPlugin(BasePlugin):
                 dest_path,
             )
         write_redirect_metadata(config['site_dir'], self.redirects)
+        create_or_update_techdocs_metadata(config['site_dir'], {'redirects': self.redirects})
 
 def _split_hash_fragment(path):
     """
