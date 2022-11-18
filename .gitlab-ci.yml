@@ -13,7 +13,3 @@ stages:
 
 prepare_pip:
   extends: .prepare_pip
-build_twine:
-  extends: .twine_build_and_push
-  variables:
-    PACKAGE_PATH: .
