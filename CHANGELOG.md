@@ -1,3 +1,10 @@
+## [1.0.5](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/compare/1.0.4...1.0.5) (2022-11-18)
+
+
+### Bug Fixes
+
+* **rename:** change old name to new name to avoid stepping on the other module ([158ea51](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/commit/158ea51e30705ab4de0c92ce755745ae92d9c6d7))
+
 ## [1.0.4](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/compare/1.0.3...1.0.4) (2022-11-18)
 
 
