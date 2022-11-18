@@ -24,15 +24,15 @@ release_requirements = [
 
 
 setup(
-    name='mkdocs-redirects',
-    version='1.2.0',
-    description='A MkDocs plugin for dynamic page redirects to prevent broken links.',
+    name='mkdocs-techdocs-redirects',
+    version='1.0.0',
+    description='A MkDocs plugin to redirect old links to new addresses for TechDocs.',
     long_description=read('README.md'),
     long_description_content_type="text/markdown",
-    keywords='mkdocs redirect',
-    url='https://github.com/datarobot/mkdocs-redirects',
-    author='Dustin Burke',
-    author_email='dustin@datarobot.com',
+    keywords='mkdocs redirect techdocs',
+    url='https://github.com/matchaxnb/mkdocs-techdocs-redirects',
+    author='Macha Desoutter',
+    author_email='macha@404',
     license='MIT',
     license_files=['LICENSE'],
     python_requires='>=3.6',

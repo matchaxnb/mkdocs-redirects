@@ -62,7 +62,7 @@ def write_html(site_dir, old_path, new_path):
         f.write(content)
 
 def write_redirect_metadata(site_dir, metadata):
-    with open(f'{site_dir}/redirects.json', 'w', encoding='utf-u') as fh:
+    with open(f'{site_dir}/redirects.json', 'w', encoding='utf-8') as fh:
         json.dump(fh, metadata)
 
 def get_relative_html_path(old_page, new_page, use_directory_urls):
@@ -105,35 +105,6 @@ class RedirectPlugin(BasePlugin):
 
     # Create HTML files for redirects after site dir has been built
     def on_post_build(self, config, **kwargs):
-
-        # Determine if 'use_directory_urls' is set
-        use_directory_urls = config.get('use_directory_urls')
-
-        # Walk through the redirect map and write their HTML files
-        for page_old, page_new in self.redirects.items():
-            # Need to remove hash fragment from new page to verify existence
-            page_new_without_hash, hash = _split_hash_fragment(str(page_new))
-
-            # External redirect targets are easy, just use it as the target path
-            if page_new.lower().startswith(('http://', 'https://')):
-                dest_path = page_new
-
-            elif page_new_without_hash in self.doc_pages:
-                file = self.doc_pages[page_new_without_hash]
-                dest_path = get_relative_html_path(page_old, file.url + hash, use_directory_urls)
-
-            # If the redirect target isn't external or a valid internal page, throw an error
-            # Note: we use 'warn' here specifically; mkdocs treats warnings specially when in strict mode
-            else:
-                log.warning("Redirect target '%s' does not exist!", page_new)
-                continue
-
-            # DO IT!
-            write_html(
-                config['site_dir'],
-                get_html_path(page_old, use_directory_urls),
-                dest_path,
-            )
         write_redirect_metadata(config['site_dir'], self.redirects)
         create_or_update_techdocs_metadata(config['site_dir'], {'redirects': self.redirects})
 
