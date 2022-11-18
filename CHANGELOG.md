@@ -1,3 +1,10 @@
+## [1.0.2](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/compare/1.0.1...1.0.2) (2022-11-18)
+
+
+### Bug Fixes
+
+* build system ([d521033](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/commit/d521033cddcc1e370afcfb8145cd2119adc50080))
+
 ## [1.0.1](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/compare/1.0.0...1.0.1) (2022-11-18)
 
 
