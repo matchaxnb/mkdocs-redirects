@@ -1,3 +1,10 @@
+## [1.0.1](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/compare/1.0.0...1.0.1) (2022-11-18)
+
+
+### Bug Fixes
+
+* **ci:** make sure package can be built ([bf6581b](https://gitlab.com/sennder/engineering-effectiveness/devx/python-mkdocs-redirects/commit/bf6581bb7141a5cbed494b496d556d3e2d4f5366))
+
 # 1.0.0 (2022-11-18)
 
 
